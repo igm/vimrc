@@ -1,0 +1,83 @@
+snippet /^handler|^h/ "Http HandleFunc" r
+func ${1:handlerFunc}(rw http.ResponseWriter, req *http.Request) {
+	$0
+}
+endsnippet
+
+snippet sleep "Sleep with time.Sleep()" !b
+time.Sleep(${1:250} * time.Millisecond)$0
+endsnippet
+
+snippet after "After with <-time.After()" !b
+<-time.After(${1:250} * time.Millisecond)$0
+endsnippet
+
+snippet gofunc "Go Function" !b
+go func(${2}) {
+	$0
+}(${1})
+endsnippet
+
+snippet fatal "log.Fatal" !b
+log.Fatal(${1:err})$0
+endsnippet
+
+snippet deb "Debug" !b
+if Debug!=nil {
+	Debug("${1:%v}", ${2:})$0
+}
+endsnippet
+
+snippet llf "log.Printf" !b
+log.Fprintf(${1:"#v"}, ${2:})$0
+endsnippet
+
+snippet lln "log.Println" !b
+log.Println(${1:""})$0
+endsnippet
+
+snippet fln "fmt.Println" !b
+fmt.Println(${1:""})$0
+endsnippet
+
+snippet fff "fmt.Fprintf" !b
+fmt.Fprintf(${1:rw}, ${2:""}, ${3:})$0
+endsnippet
+
+snippet ffln "fmt.Fprintln" !b
+fmt.Fprintln(${1:rw}, ${2:""})$0
+endsnippet
+
+snippet test "Go Test function" !b
+func Test${1:XXX}(t *testing.T) {
+	$0
+}
+endsnippet
+
+snippet bench "Go Test function" !b
+func Benchmark${1:XXX}(b *testing.B) {
+	$0
+}
+endsnippet
+
+snippet init "Go Init Function" !b
+func init() {
+	$0
+}
+endsnippet
+
+snippet main "Go Main Function" !b
+func main() {
+	$0
+}
+endsnippet
+
+snippet p "GO package" !b
+package $0
+endsnippet
+
+snippet iferr "if err!=nil {}" !b
+if err!=nil {
+	$0
+}
+endsnippet
