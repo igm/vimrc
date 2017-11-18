@@ -52,6 +52,9 @@ set laststatus=2 " always show the status line
 set noswapfile 
 set completeopt=longest,menuone
 
+" Do not show stupid q: window
+" map q: :q
+
 
 set listchars=tab:→\ ,trail:·,eol:¶ 
 
@@ -61,7 +64,10 @@ nnoremap <silent> <leader>l :set list!<CR>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :qa!<cr>
 nnoremap <leader>d :bd<cr>
-nnoremap * *<c-o>
+" nnoremap * *<c-o>
+" Don't move on * I'd use a function for this but Vim clobbers the last search
+" when you're in a function so fuck it, practicality beats purity.
+nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
 
 " Visual linewise up and down by default (and use gj gk to go quicker)
 noremap <Up> gk
