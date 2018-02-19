@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'fatih/vim-go'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -14,10 +15,16 @@ Plug 'ervandew/supertab'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'mattn/emmet-vim'
+
+" Plug 'vim-scripts/vim-multiple-cursors'
   
 call plug#end()
 
-colorscheme seoul256
+" colorscheme seoul256
+colorscheme OceanicNext
 " proper font selection
 if has("gui_running")
 	if has("gui_gtk2")
@@ -100,13 +107,23 @@ let g:SuperTabDefaultCompletionType="context"
 "                               Syntastic                               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:syntastic_go_checkers = ['go']
+let g:syntastic_go_checkers = ['govet']
+let g:syntastic_always_populate_loc_list = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               GoDev settings                               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
-" let g:go_list_type = "quickfix"
+let g:go_list_height = 15
+" let g:go_highlight_types = 1
+" let g:go_highlight_fields = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+let g:go_gocode_unimported_packages = 1
+ " let g:go_list_type = "quickfix"
+let g:go_fmt_fail_silently=1  " do not infere with syntastic
+" let g:go_def_mode = 'godef'  " much faster compared to guru atm
+
 " set updatetime=250
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
