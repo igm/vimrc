@@ -18,20 +18,21 @@ Plug 'majutsushi/tagbar'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'mattn/emmet-vim'
+Plug 'elmcast/elm-vim'
 
 " Plug 'vim-scripts/vim-multiple-cursors'
   
 call plug#end()
 
-" colorscheme seoul256
-colorscheme OceanicNext
+colorscheme seoul256
+" colorscheme OceanicNext
 " proper font selection
 if has("gui_running")
 	if has("gui_gtk2")
 		set guifont=Monospace\ 12
 		" set guifont=Inconsolata\ 14
 	elseif has("gui_macvim")
-		set guifont=Menlo\ Regular:h14
+		set guifont=Menlo\ Regular:h15
 	elseif has("gui_win32")
 		set guifont=Consolas:h11:cANSI
 	endif
